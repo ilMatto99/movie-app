@@ -1,6 +1,6 @@
 import { getTrending, getTrendingMovies, getSerchPerson } from "./api/trendingGetter.js";
  
-const trendingData = getTrending().then(data => {
+export const trendingData = getTrending().then(data => {
     data.results.forEach(movie => {
         console.log("ID: " + movie.id);
         console.log("Poster_path: " + movie.poster_path);
@@ -14,4 +14,5 @@ const trendingData = getTrending().then(data => {
 getTrending();
 getTrendingMovies();
 getSerchPerson();
+
 
