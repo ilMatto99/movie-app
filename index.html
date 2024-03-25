@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  
+    
     
        <!-- Barra di navigazione -->
        <nav>
@@ -23,8 +23,8 @@
 
        </nav>
 
-       <ul id="trending-movies-list"></ul>
-    <div id="movies-card"></div>
+       
+    
 
     
        <!-- Hero  -->
@@ -32,29 +32,31 @@
            <div class="hero-content">
                <h1>Benvenuti su MarinoVision</h1>
                <p>Guarda i migliori film in streaming!</p>
-               <div class="testimonials">
-                   <div class="testimonial">
-                       <p>"MarinoVision è la migliore piattaforma di streaming che abbia mai provato!"</p>
-                       <p>- Giovanni R.</p>
-                   </div>
-                   <div class="testimonial">
-                       <p>"Un'esperienza cinematografica eccezionale a portata di mano."</p>
-                       <p>- Maria S.</p>
-                   </div>
+                </div>
+                
+                 
                </div>
            </div>
        </section>
     
+       <div id="movies-card"></div>
+      <div><ul id="trending-movies-list"></ul> </div>  
+        
+
 </body>
 
 <script type="module">
-import {createTrendingMoviesList} from "./js/dom-manipulator/createList.js";
+import {createTrendingMoviesList, containerCard} from "./js/dom-manipulator/createList.js";
 import {getTrendingMovies} from "./js/api/trendingGetter.js";
 
 
+
 const trendingMovies = await getTrendingMovies();
-console.log(trendingMovies)
+console.log(getTrendingMovies);
+console.log(trendingMovies);
+containerCard(trendingMovies);
 createTrendingMoviesList(trendingMovies.results);
+
 </script>
 
 </html>

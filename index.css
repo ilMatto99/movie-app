@@ -94,13 +94,20 @@ nav input[type="text"] {
     margin-bottom: 40px;
 }
 
-.testimonials {
-    margin-top: 40px;
+.movies-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+.movies-card {
+    flex-basis: calc(20% - 20px); /* Imposta la larghezza di ogni card a un quinto dello spazio disponibile, sottraendo un po' di spazio per il padding */
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(10, 190, 190);
+    color: aliceblue;
+    border: 2px solid aliceblue;
+    border-radius: 10px;
 }
 
-.testimonial {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
+

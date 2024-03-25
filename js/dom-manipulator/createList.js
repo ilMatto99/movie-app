@@ -25,3 +25,31 @@ movies.forEach((element, index) => {
 });
 };
 
+export const containerCard = (elements) => 
+{
+    const cards = document.getElementById("movies-card");
+    elements.results.forEach((element) => 
+    {
+        const card = document.createElement("div");
+
+        const textContainer = document.createElement("div");
+
+        const image = document.createElement("img");
+        image.src = `https://image.tmdb.org/t/p/w342${element.poster_path}`;    
+        image.alt= "poster";
+
+        const title = document.createElement("h1");
+        title.innerText = element.title;
+
+        const description = document.createElement("p");
+        description.innerHTML = element.overview;
+
+        textContainer.appendChild(title);
+        card.appendChild(image); // Aggiungi l'elemento immagine, non image.src
+        textContainer.appendChild(description);
+        card.appendChild(textContainer);
+        card.classList.add("movieCards");
+        cards.appendChild(card);
+    });
+
+}
