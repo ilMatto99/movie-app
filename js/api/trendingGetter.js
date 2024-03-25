@@ -13,7 +13,7 @@ export const getTrending = async () => {
 }
 
 export const getTrendingMovies = async () => {
-    const response = await fetch(BASE_URL + "trendig/movie/day?language=en-US", OPTS);
+    const response = await fetch(BASE_URL + "trending/movie/day?language=en-US", OPTS);
     const data = await response.json();
 
     return data;

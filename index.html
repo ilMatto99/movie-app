@@ -3,22 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie App</title>
+    <link rel="stylesheet" href="index.css"/>
+    <title>MarinoVision</title>
 </head>
+
 <body>
-    <h1 id='header'>Movie App</h1>
+  
+    
+       <!-- Barra di navigazione -->
+       <nav>
+           <ul>
+               <li><a href="#">Drammatico</a></li>
+               <li><a href="#">Thriller</a></li>
+               <li><a href="#">Comedy</a></li>
+               <li><a href="#">Horror</a></li>
+               <li><a href="#">Crime</a></li>
+           </ul>
+           <input type="text" placeholder="Cerca film..." />
+
+       </nav>
+
+       <ul id="trending-movies-list"></ul>
+    <div id="movies-card"></div>
+
+    
+       <!-- Hero  -->
+       <section class="hero">
+           <div class="hero-content">
+               <h1>Benvenuti su MarinoVision</h1>
+               <p>Guarda i migliori film in streaming!</p>
+               <div class="testimonials">
+                   <div class="testimonial">
+                       <p>"MarinoVision è la migliore piattaforma di streaming che abbia mai provato!"</p>
+                       <p>- Giovanni R.</p>
+                   </div>
+                   <div class="testimonial">
+                       <p>"Un'esperienza cinematografica eccezionale a portata di mano."</p>
+                       <p>- Maria S.</p>
+                   </div>
+               </div>
+           </div>
+       </section>
+    
 </body>
 
 <script type="module">
-import {fixTitle, addParagraph} from "./js/utils/dom.js";
-import {trendingData} from "./js/index.js";
+import {createTrendingMoviesList} from "./js/dom-manipulator/createList.js";
+import {getTrendingMovies} from "./js/api/trendingGetter.js";
 
- console.log("prova");
- console.log(trendingData);
 
-fixTitle();
-addParagraph();
-trendingData();
+const trendingMovies = await getTrendingMovies();
+console.log(trendingMovies)
+createTrendingMoviesList(trendingMovies.results);
 </script>
 
 </html>
